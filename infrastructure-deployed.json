@@ -1,0 +1,52 @@
+{
+  "deployed_at": "2026-07-02T16:47:25Z",
+  "region": "us-east-1",
+  "account_id": "527397543025",
+  "resources": {
+    "vpc": {
+      "id": "vpc-021432abf86a45870",
+      "cidr": "10.0.0.0/16",
+      "name": "dev-proj-jenkins-us-east-1-vpc"
+    },
+    "public_subnets": [
+      {
+        "id": "subnet-0527f2233c27892ba",
+        "cidr": "10.0.1.0/24",
+        "az": "us-east-1a",
+        "name": "jenkins-public-subnet-1"
+      },
+      {
+        "id": "subnet-0e1df728a628a16f5",
+        "cidr": "10.0.2.0/24",
+        "az": "us-east-1b",
+        "name": "jenkins-public-subnet-2"
+      }
+    ],
+    "private_subnets": [
+      {
+        "id": "subnet-033ffa6a30e0656d3",
+        "cidr": "10.0.3.0/24",
+        "az": "us-east-1a",
+        "name": "jenkins-private-subnet-1"
+      },
+      {
+        "id": "subnet-0849121b1569dbefb",
+        "cidr": "10.0.4.0/24",
+        "az": "us-east-1b",
+        "name": "jenkins-private-subnet-2"
+      }
+    ],
+    "internet_gateway": {
+      "id": "igw-0b3e8ed623a6d9f7f",
+      "name": "jenkins-igw",
+      "attached_to_vpc": "vpc-021432abf86a45870"
+    }
+  },
+  "status": "PARTIAL - Networking created, security groups and EC2 pending",
+  "next_steps": [
+    "Create route tables and associate with subnets",
+    "Create security groups for Jenkins",
+    "Launch EC2 instance with Jenkins",
+    "Configure load balancer (optional)"
+  ]
+}

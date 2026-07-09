@@ -1,0 +1,10 @@
+{
+    "kiroAgent.configureMCP": "Enabled",
+    "terminal.integrated.env.windows": {
+        "AWS_PROFILE": "default",
+        "AWS_REGION": "us-east-1",
+        "AWS_DEFAULT_REGION": "us-east-1",
+        "AWS_SHARED_CREDENTIALS_FILE": "C:/Users/user/.aws/credentials",
+        "AWS_CONFIG_FILE": "C:/Users/user/.aws/config"
+    }
+}

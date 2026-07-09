@@ -1,10 +1,15 @@
-bucket_name = "dev-proj-1-jenkins-remote-state-bucket-123456"
+# Remote state S3 bucket - unique per AWS account
+bucket_name = "jenkins-remote-state-527397543025"
 
-vpc_cidr             = "11.0.0.0/16"
-vpc_name             = "dev-proj-jenkins-eu-west-vpc-1"
-cidr_public_subnet   = ["11.0.1.0/24", "11.0.2.0/24"]
-cidr_private_subnet  = ["11.0.3.0/24", "11.0.4.0/24"]
-eu_availability_zone = ["eu-west-1a", "eu-west-1b"]
+# VPC Configuration - us-east-1 region
+vpc_cidr             = "10.0.0.0/16"
+vpc_name             = "dev-proj-jenkins-us-east-1-vpc"
+cidr_public_subnet   = ["10.0.1.0/24", "10.0.2.0/24"]
+cidr_private_subnet  = ["10.0.3.0/24", "10.0.4.0/24"]
+eu_availability_zone = ["us-east-1a", "us-east-1b"]
 
-public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDwmgMHFJE7J4qepIzAZL3/yC6J0zsEAb/oHYL+WBBDNUjSH4TeHUnHVNe9b/pyPcub+O/HNvlGrzSxUp0xT0b3O7kkTtgBKiG8NaBbonj+c7byfOGER80DYxc5adlBltuIDd8StFe7OMzbYyUSr1mdxDTIWm/OoE39G/fu3hTqUGkykv072GAy8nMFejITRw9pf+53B9ziE5rsdOUH4uqBiQa/Ng/qKo7h9MtJGcloRATYiObXwAgrHtt3sDrtvkq2ZceT906/BJm1Twlm+BHlQecHV18Ak3bzm/6HzlsA/q+yORsoB+VxSUxvVy0nXTc1X8vJAD4KSYVL5DTrpisdnQAIcuqAbea+LMku2o4sdnrrIlUi8/8BXeVbI4TNNGd0+sWpCVcDEhb4gyA/XXTvloQyjTYrL4+am/9XEY6NGdsrPK74sjvtpUZPUrmzTJ/mJWG5ncGY88GAj+YZAsY5pnAqh2CkR2TUpglugldnWyrppbe2QyC9iQkgUGSkBTs= rahulwagh@Rahuls-MacBook-Pro.local"
-ec2_ami_id = "ami-0694d931cee176e7d"
+# EC2 Configuration
+public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCcwPcI3qJiWBA3FfIT9Roaxl1vQIsTEN3qNZitQ9jNf4cer6R2FmsYM8pKvadCMqeYNthIJZoDVTe7EGJ8khdwnbesN1kF8lWEmjCKYf8RZpbqs8bgWXBixU4u3z60jMjeA+AY4OmzFQ+OrNp009TpPb12jFEDx9qX8n6/0zabUwc17k8ztjvPgtJ+VfIUUEcjM2N6AhcZYNwNNrxfSp8OaEcFeDdyJ47dthaNg2q4FTLvSnT05LT5nrII3wwC3jKcBIsMiMblrULL/+RUQanUblMs2AiwgiodYGIyRssIR0Cv2AI9JZ+a5OIMv12OwnCXEy5YtM1hdbHlwXJx9924t72oInFpz3UkKAVytqQWd/kKh5G84pTWxC6250IJQa0yxrz5ase5Ih0Tyfyf+bbiI7rLq8YeE/We4wumn7ptTF4F+EXvuqWNjx8OPqITiy8LWdSeSZ0vfwtBeSmc9ccnTtvlbQK1E9y9INYdGZQXBIFJtGGyPxPBsbC18YOl2Sk= user@DESKTOP-BFDBACI"
+
+# Latest Amazon Linux 2023 AMI for us-east-1 (as of June 2026)
+ec2_ami_id = "ami-0de568ccf3b0080d9"

@@ -11,7 +11,9 @@ variable "lb_listner_protocol" {}
 variable "lb_listner_default_action" {}
 variable "lb_https_listner_port" {}
 variable "lb_https_listner_protocol" {}
-variable "dev_proj_1_acm_arn" {}
+variable "dev_proj_1_acm_arn" {
+  default = ""
+}
 variable "lb_target_group_attachment_port" {}
 
 output "aws_lb_dns_name" {
@@ -37,11 +39,7 @@ resource "aws_lb" "dev_proj_1_lb" {
   }
 }
 
-resource "aws_lb_target_group_attachment" "dev_proj_1_lb_target_group_attachment" {
-  target_group_arn = var.lb_target_group_arn
-  target_id        = var.ec2_instance_id # Replace with your EC2 instance reference
-  port             = var.lb_target_group_attachment_port
-}
+# NOTE: target group attachment is handled by the lb_target_group module
 
 resource "aws_lb_listener" "dev_proj_1_lb_listner" {
   load_balancer_arn = aws_lb.dev_proj_1_lb.arn
@@ -54,8 +52,10 @@ resource "aws_lb_listener" "dev_proj_1_lb_listner" {
   }
 }
 
-# https listner on port 443
+# HTTPS listener on port 443 - only created when an ACM certificate ARN is provided
 resource "aws_lb_listener" "dev_proj_1_lb_https_listner" {
+  count = var.dev_proj_1_acm_arn != "" ? 1 : 0
+
   load_balancer_arn = aws_lb.dev_proj_1_lb.arn
   port              = var.lb_https_listner_port
   protocol          = var.lb_https_listner_protocol

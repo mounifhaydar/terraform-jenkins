@@ -1,0 +1,20 @@
+{
+  "servers": {
+    "aws": {
+      "type": "stdio",
+      "command": "powershell",
+      "args": [
+        "-NoProfile",
+        "-Command",
+        "$env:AWS_PROFILE='default'; $env:AWS_REGION='us-east-1'; $env:AWS_DEFAULT_REGION='us-east-1'; $env:AWS_SHARED_CREDENTIALS_FILE='C:/Users/user/.aws/credentials'; $env:AWS_CONFIG_FILE='C:/Users/user/.aws/config'; aws sts get-caller-identity"
+      ],
+      "env": {
+        "AWS_PROFILE": "default",
+        "AWS_REGION": "us-east-1",
+        "AWS_DEFAULT_REGION": "us-east-1",
+        "AWS_SHARED_CREDENTIALS_FILE": "C:/Users/user/.aws/credentials",
+        "AWS_CONFIG_FILE": "C:/Users/user/.aws/config"
+      }
+    }
+  }
+}
