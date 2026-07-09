@@ -1,0 +1,16 @@
+{
+  "servers": {
+    "jenkins": {
+      "type": "http",
+      "url": "http://98.80.210.203:8080",
+      "headers": {
+        "Authorization": "Basic YWRtaW46YWRtaW4="
+      },
+      "env": {
+        "JENKINS_URL": "http://98.80.210.203:8080",
+        "JENKINS_USER": "admin",
+        "JENKINS_PASSWORD": "admin"
+      }
+    }
+  }
+}

@@ -5,6 +5,9 @@
         "AWS_REGION": "us-east-1",
         "AWS_DEFAULT_REGION": "us-east-1",
         "AWS_SHARED_CREDENTIALS_FILE": "C:/Users/user/.aws/credentials",
-        "AWS_CONFIG_FILE": "C:/Users/user/.aws/config"
+        "AWS_CONFIG_FILE": "C:/Users/user/.aws/config",
+        "JENKINS_URL": "http://98.80.210.203:8080",
+        "JENKINS_USER": "admin",
+        "JENKINS_PASSWORD": "admin"
     }
 }
