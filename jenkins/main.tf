@@ -50,6 +50,7 @@ resource "aws_instance" "jenkins_ec2_instance_ip" {
   ami                  = var.ami_id
   instance_type        = var.instance_type
   iam_instance_profile = aws_iam_instance_profile.jenkins_ec2_profile.name
+  disable_api_termination = true # enable Termination Protection on the EC2 instance so it cannot be terminated accidentally.
 
   tags = {
     Name = var.tag_name
@@ -75,6 +76,10 @@ resource "aws_instance" "jenkins_ec2_instance_ip" {
 
   # Wait for user_data to finish before Terraform marks instance ready
   user_data_replace_on_change = true
+
+  lifecycle {
+    prevent_destroy = true
+  }
 }
 
 resource "aws_key_pair" "jenkins_ec2_instance_public_key" {
