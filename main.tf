@@ -24,6 +24,8 @@ module "jenkins" {
   sg_for_jenkins            = [module.security_group.sg_ec2_sg_ssh_http_id, module.security_group.sg_ec2_jenkins_port_8080]
   enable_public_ip_address  = true
   user_data_install_jenkins = templatefile("./jenkins-runner-script/jenkins-installer.sh", {})
+  # For the recovery deployment, do not reinstall Jenkins. Change it temporarily to:
+  # user_data_install_jenkins = ""
 }
 
 module "lb_target_group" {

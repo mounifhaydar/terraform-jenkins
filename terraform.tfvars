@@ -13,3 +13,7 @@ public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCcwPcI3qJiWBA3FfIT9Roaxl1vQI
 
 # Latest Amazon Linux 2023 AMI for us-east-1 (as of June 2026)
 ec2_ami_id = "ami-0de568ccf3b0080d9"
+
+# For the recovery deployment, do not reinstall Jenkins. Change it temporarily to:
+# Recovered Jenkins AMI from EBS snapshot
+# ec2_ami_id = "ami-09e5b0af6b7ea8a84"
